@@ -1,21 +1,29 @@
 {
-  "name": "yt2x",
-  "description": "Fetches latest video from YouTube & posts to Twitter",
+  "name": "YoutubeToTwitter",  // More descriptive name
+  "description": "Fetches latest YouTube video & posts to Twitter",
+  "keywords": [  // Added keywords for better discoverability
+    "youtube",
+    "twitter",
+    "automation"
+  ],
   "stack": "ruby",
   "build": {
     "commands": [
-      "bundle install"  // Install dependencies
+      "bundle install"
     ]
   },
+  "scripts": {
+    "postdeploy": "bundle exec rake db:setup"
+  },
   "env": {
-    "X_API_KEY": "",  // Placeholder for X API Key
-    "X_API_KEY_SECRET": "",  // Placeholder for X API Key Secret
-    "X_ACCESS_TOKEN": "",  // Placeholder for X Access Token
-    "X_ACCESS_TOKEN_SECRET": "",  // Placeholder for X Access Token Secret
-    "DATABASE_URL": "${DATABASE_URL}"  // Reference Heroku-provided database URL
+    "X_API_KEY": "",
+    "X_API_KEY_SECRET": "",
+    "X_ACCESS_TOKEN": "",
+    "X_ACCESS_TOKEN_SECRET": "",
+    "DATABASE_URL": "${DATABASE_URL}"
   },
   "addons": [
-    "heroku-postgresql:hobby-dev",  // Heroku Postgres for database storage
-    "scheduler:standard"  // Heroku Scheduler for job scheduling
+    "heroku-postgresql:hobby-dev",
+    "scheduler:standard"
   ]
 }
