@@ -56,7 +56,7 @@ git init
 ```
 Add a Procfile with the following content:
 ```
-worker: bundle exec ruby youtube_to_twitter.rb
+worker: bundle exec ruby main.rb
 ```
 Commit your changes:  
 ```
@@ -73,20 +73,24 @@ git push heroku master
 ```
 Provision a Heroku Postgres database:
 ```
-heroku addons:create heroku-postgresql:hobby-dev
+heroku addons:create heroku-postgresql:essential-1
 ```
-Configure Heroku Scheduler to run the script periodically (e.g., 10mins):
-```
-heroku addons:create scheduler:standard
-heroku addons:open scheduler
-```
-In the scheduler, set a job to run rake worker at your desired frequency.
 
 ## OR
 
 <a href="https://heroku.com/deploy?template_url=https://github.com/DevLahiru/yt2x/blob/master/app.json">
   <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy">
 </a>
+
+## Configure Scheduler
+Configure Heroku Scheduler to run the script periodically:
+```
+heroku addons:create scheduler:standard
+heroku addons:open scheduler
+```
+In the scheduler, set a job to run ``` ruby main.rb ``` at your desired frequency (e.g., 10mins).  
+
+![image](https://github.com/DevLahiru/yt2x/assets/129839249/f46954b3-f656-4dc0-9e5d-a89ee1e5cb37)
 
 ## Usage
 
