@@ -82,6 +82,12 @@ heroku addons:open scheduler
 ```
 In the scheduler, set a job to run rake worker at your desired frequency.
 
+## or
+
+<a href="https://heroku.com/deploy?template_url=https://github.com/DevLahiru/yt2x/blob/master/app.json">
+  <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy">
+</a>
+
 ## Usage
 
 Once deployed, the script will automatically fetch the latest video from the specified YouTube channel's playlist using the RSS feed and post it to Twitter if it hasn't already been tweeted.
