@@ -15,7 +15,6 @@
     "X_API_KEY_SECRET": {
       "required": true
     }
-  }
   },
   "formation": {
     "web": {
