@@ -1,29 +1,44 @@
 {
-  "name": "YoutubeToTwitter",  // More descriptive name
+  "name": "yt2x",
   "description": "Fetches latest YouTube video & posts to Twitter",
-  "keywords": [  // Added keywords for better discoverability
-    "youtube",
-    "twitter",
-    "automation"
-  ],
-  "stack": "ruby",
-  "build": {
-    "commands": [
-      "bundle install"
-    ]
-  },
-  "scripts": {
-    "postdeploy": "bundle exec rake db:setup"
-  },
+  "scripts": {},
   "env": {
-    "X_API_KEY": "",
-    "X_API_KEY_SECRET": "",
-    "X_ACCESS_TOKEN": "",
-    "X_ACCESS_TOKEN_SECRET": "",
-    "DATABASE_URL": "${DATABASE_URL}"
+    "LANG": {
+      "required": true
+    },
+    "PAPERTRAIL_API_TOKEN": {
+      "required": true
+    },
+    "X_ACCESS_TOKEN": {
+      "required": true
+    },
+    "X_ACCESS_TOKEN_SECRET": {
+      "required": true
+    },
+    "X_API_KEY": {
+      "required": true
+    },
+    "X_API_KEY_SECRET": {
+      "required": true
+    },
+    "DATABASE_URL": {
+      "required": true
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
   },
   "addons": [
-    "heroku-postgresql:hobby-dev",
-    "scheduler:standard"
-  ]
+    "papertrail",
+    "heroku-postgresql",
+    "scheduler"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/ruby"
+    }
+  ],
+  "stack": "heroku-22"
 }
