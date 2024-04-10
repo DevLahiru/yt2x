@@ -3,12 +3,6 @@
   "description": "Fetches latest YouTube video & posts to Twitter",
   "scripts": {},
   "env": {
-    "LANG": {
-      "required": true
-    },
-    "PAPERTRAIL_API_TOKEN": {
-      "required": true
-    },
     "X_ACCESS_TOKEN": {
       "required": true
     },
@@ -22,16 +16,10 @@
       "required": true
     },
     "DATABASE_URL": {
-      "required": true
-    }
-  },
-  "formation": {
-    "web": {
-      "quantity": 1
+      "generator": "secret"
     }
   },
   "addons": [
-    "papertrail",
     "heroku-postgresql",
     "scheduler"
   ],
