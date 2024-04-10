@@ -20,7 +20,7 @@
     }
   },
   "addons": [
-    "heroku-postgresql",
+    { "plan": "heroku-postgresql:essential-1" },
     "scheduler"
   ],
   "buildpacks": [
