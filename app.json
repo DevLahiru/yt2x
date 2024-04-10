@@ -1,0 +1,21 @@
+{
+  "name": "yt2x",
+  "description": "Fetches latest video from YouTube & posts to Twitter",
+  "stack": "ruby",
+  "build": {
+    "commands": [
+      "bundle install"  // Install dependencies
+    ]
+  },
+  "env": {
+    "X_API_KEY": "",  // Placeholder for X API Key
+    "X_API_KEY_SECRET": "",  // Placeholder for X API Key Secret
+    "X_ACCESS_TOKEN": "",  // Placeholder for X Access Token
+    "X_ACCESS_TOKEN_SECRET": "",  // Placeholder for X Access Token Secret
+    "DATABASE_URL": "${DATABASE_URL}"  // Reference Heroku-provided database URL
+  },
+  "addons": [
+    "heroku-postgresql:hobby-dev",  // Heroku Postgres for database storage
+    "scheduler:standard"  // Heroku Scheduler for job scheduling
+  ]
+}
