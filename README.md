@@ -82,7 +82,7 @@ heroku addons:open scheduler
 ```
 In the scheduler, set a job to run rake worker at your desired frequency.
 
-## or
+## OR
 
 <a href="https://heroku.com/deploy?template_url=https://github.com/DevLahiru/yt2x/blob/master/app.json">
   <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy">
